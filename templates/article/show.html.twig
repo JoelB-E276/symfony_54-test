@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+
+    <div class"container">
+        
+        {% for articles in article %}
+        <h1 class="my-5">{{ articles.title }}</h1>
+            <div class="row border-start border-bottom my-4">
+                <div class="col-8">
+                    <p></p>
+                </div>        
+            <div class="col-4">
+                <div class="text-end">
+                    <button class="btn btn-outline-dark btn-sm my-3 me-2">Lire</button>
+                    <button class="btn btn-outline-dark btn-sm my-3 me-4">Modifier</button>
+                    <button class="btn btn-danger btn-sm my-3">Supprimer</button>
+                </div> 
+            </div> 
+        </div>
+        {% endfor %}
+
+{% endblock %}

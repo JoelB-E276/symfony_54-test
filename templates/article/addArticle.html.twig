@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="text-center my-3">
+        <div class="text-center">
+            <h1 class="my-5">Créer un article</h1>
+        </div>
+            
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-outline-dark my-3">Ajouter l'article</button>
+        {{ form_end(form) }}
+    <div>    
+
+
+{% endblock %}

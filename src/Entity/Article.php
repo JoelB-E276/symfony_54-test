@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-#[UniqueEntity('slug')]
+#[UniqueEntity('slug','Slug déjà utilsé, pour continuer veuillez modifier le slug')]
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
@@ -20,7 +20,6 @@ class Article
     #[ORM\Column(length: 150)]
     private ?string $title = null;
 
-    #[Assert\Unique]
     #[ORM\Column(length: 150)]
     private ?string $slug = null;
 
