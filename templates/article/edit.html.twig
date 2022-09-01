@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier l'article{% endblock %}
+
+{% block body %}
+    <h2 class="text-center my-5">Modifier un article</h2>
+    <h4 class="text-center my-5">{{ article.title }}</h4>
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <div class="col-lg-10 text-center">
+                {{ form_start(form) }}
+
+                    {{ form_row(form.introduction) }}
+                    {{ form_row(form.content) }}
+                    {{ form_row(form._token) }}
+                    {{ form_row(form.save) }}
+
+                {{ form_end(form, {render_rest: false}) }}
+            </div>
+        </div>         
+    </div>
+
+{% endblock %}
+
+
+    

@@ -3,23 +3,31 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
+        <h1 class="my-5">{{ article.title }}</h1>
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="">
+                        <img class="img-fluid" {#src="{{ asset('upload/507863.jpg') }}" #}src="{{ asset('upload/' ~ article.photo) }}" >
+                    </div>
+                    <div>
+                        <p>{{ article.content }}</p>   
+                    </div>
+                </div>
 
-    <div class"container">
-        
-        {% for articles in article %}
-        <h1 class="my-5">{{ articles.title }}</h1>
-            <div class="row border-start border-bottom my-4">
-                <div class="col-8">
-                    <p></p>
-                </div>        
-            <div class="col-4">
-                <div class="text-end">
-                    <button class="btn btn-outline-dark btn-sm my-3 me-2">Lire</button>
-                    <button class="btn btn-outline-dark btn-sm my-3 me-4">Modifier</button>
-                    <button class="btn btn-danger btn-sm my-3">Supprimer</button>
-                </div> 
-            </div> 
-        </div>
-        {% endfor %}
-
+                <aside class="col-lg-3 col-md-12">
+                    {% for articles in allArticles %}
+                        <div class="">
+                            <img class="img-fluid" src="{{ asset('upload/507863.jpg') }}"{# src="{{ asset('upload/' ~ article.photo) }}" #}>
+                        </div>
+                        <div class="bg-white">
+                            <div>
+                                <h4>{{ articles.title }}</h4>
+                            </div>        
+                            <div class="">
+                                <p>{{ articles.introduction }}</p>
+                            </div>
+                        </div>      
+                    {% endfor %}
+                </aside>
+            </div>     
 {% endblock %}

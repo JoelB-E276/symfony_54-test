@@ -38,14 +38,17 @@ class ArticleRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    /**
+     * @method findOneBySlug() Custom query to get Article by @param $slug 
+     */
 
-    public function findOneBySlug($value): ?Article
+    public function findOneBySlug(string $slug): ?Article
     {
         return $this->createQueryBuilder('a')
-           ->andWhere('a.slug = :val')
-            ->setParameter('val', $value)
-          ->getQuery()
-           ->getOneOrNullResult()
+            ->Where('a.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->getQuery()
+            ->getOneOrNullResult()
        ;
    }
 
